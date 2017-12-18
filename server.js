@@ -45,45 +45,38 @@ app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-app.get("/create", function(req, res) {
+app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
+
+
 // Get all tables
-app.get("/tables", function(req, res) {
+app.get("/api/tables", function(req, res) {
   res.json(tables);
 });
+//get all waitlist
+app.get("/api/waitlist", function(req, res) {
+  res.json(waitlist);
+});
 
-// // Search for Specific Character (or all characters) - provides JSON
-// app.get("/api/:characters?", function(req, res) {
-//   var chosen = req.params.characters;
 
-//   if (chosen) {
-//     console.log(chosen);
 
-//     for (var i = 0; i < characters.length; i++) {
-//       if (chosen === characters[i].routeName) {
-//         return res.json(characters[i]);
-//       }
-//     }
-//     return res.json(false);
-//   }
-//   return res.json(characters);
-// });
 
-// // Create New Characters - takes in JSON input
-// app.post("/api/new", function(req, res) {
-//   // req.body hosts is equal to the JSON post sent from the user
-//   // This works because of our body-parser middleware
-//   var newcharacter = req.body;
-//   newcharacter.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
 
-//   console.log(newcharacter);
+// // Create New Reservation - takes in JSON input
+app.post("/api/reserve", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user
+  // This works because of our body-parser middleware
+  var newReservation = req.body;
+  newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
 
-//   characters.push(newcharacter);
+  console.log(newReservation);
 
-//   res.json(newcharacter);
-// });
+  tables.push(newReservation);
+
+  res.json(newReservation);
+});
 
 // Starts the server to begin listening
 // =============================================================
