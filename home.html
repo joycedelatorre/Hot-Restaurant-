@@ -22,8 +22,8 @@
       <a href="/reserve"><button type="button" class="btn btn-danger btn-lg" id="reserve"><span class="glyphicon glyphicon-credit-card"></span> Make Reservations</button></a>
     </div>
     <div class ="row">
-    	<a href="#">API Table Link |</a> <!-- this should go to the table page -->
-      <a href="#"> API Wait List</a>  <!-- this should go to the table page -->
+    	<a href="/api/tables">API Table Link |</a> <!-- this should go to the table page -->
+      <a href="/api/waitlist"> API Wait List</a>  <!-- this should go to the table page -->
     </div>
   </div>
 
@@ -35,7 +35,7 @@
     });
 
     $("#view").on("click", function(event){
-      $.get("/view") //-------------- this should go to the tables page
+      $.get("/tables") //-------------- this should go to the tables page
       .done(function(data){
         // loop through the data and append it to the table
       });
