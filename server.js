@@ -21,6 +21,30 @@ var tables = [
     phone: "123",
     email: "applejeff@mac.com",
     id: "banana"
+  },
+    {
+    name: "Jeff2",
+    phone: "123",
+    email: "applejeff@mac.com",
+    id: "banana1"
+  },
+    {
+    name: "Jeff3",
+    phone: "123",
+    email: "applejeff@mac.com",
+    id: "banana2"
+  },
+    {
+    name: "Jeff4",
+    phone: "123",
+    email: "applejeff@mac.com",
+    id: "banana3"
+  },
+    {
+    name: "Jeff5",
+    phone: "123",
+    email: "applejeff@mac.com",
+    id: "banana4"
   }
 ];
 
@@ -72,7 +96,7 @@ app.post("/api/reserve", function(req, res) {
 
   if (tables.length < 5) {
     tables.push(newReservation);
-    res.json(newReservation);
+    res.json(tables);
   }
   else {
     waitlist.push(newReservation);
