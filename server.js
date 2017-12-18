@@ -17,28 +17,28 @@ app.use(bodyParser.json());
 // =============================================================
 var tables = [
   {
-    name: "",
-    phone: "",
-    email: "",
-    id: "", 
-  },
+    name: "Jeff",
+    phone: "123",
+    email: "applejeff@mac.com",
+    id: "banana"
+  }
 ];
 
 var waitlist = [
   {
-    name: "",
-    phone: "",
-    email: "",
-    id: "", 
-  },
-]
+    name: "Scott",
+    phone: "456",
+    email: "scott@scott.com",
+    id: "mango"
+  }
+];
 
 // Routes
 // =============================================================
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "XXX.html"));
+  res.sendFile(path.join(__dirname, "home.html"));
 });
 
 app.get("/tables", function(req, res) {
@@ -46,10 +46,10 @@ app.get("/tables", function(req, res) {
 });
 
 app.get("/create", function(req, res) {
-  res.sendFile(path.join(__dirname, "create.html"));
+  res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// Get all characters
+// Get all tables
 app.get("/tables", function(req, res) {
   res.json(tables);
 });
