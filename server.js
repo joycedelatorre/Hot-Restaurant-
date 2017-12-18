@@ -61,9 +61,6 @@ app.get("/api/waitlist", function(req, res) {
 });
 
 
-
-
-
 // // Create New Reservation - takes in JSON input
 app.post("/api/reserve", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
