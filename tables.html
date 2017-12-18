@@ -18,8 +18,8 @@
       <h3 style="text-align:center;">We only have 5 tables! Book your seat before they all gone!</h3>
 
       <div class ="text-center">
-      <a href="/reserve"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-credit-card"></span> Make Reservations</button></a>
-       <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
+      <a href="/reserve"><button type="button" class="btn btn-danger btn-lg" id="reserve"><span class="glyphicon glyphicon-credit-card"></span> Make Reservations</button></a>
+       <a href="/"><button type="button" class="btn btn-lg btn-default" id="home"><span class="glyphicon glyphicon-home"></span></button></a>
       </div>
 
     </div>
@@ -59,7 +59,19 @@
   </div>
 
   <script type="text/javascript">
-    $("#")
+    $("#reserve").on("click", function(event){
+      $.get("/reserve")
+      .done(function(data){
+
+      });
+    });
+
+    $("#home").on("click", function(event){
+      $.get("/")
+      .done(function(data){
+
+      });
+    });
     
   </script>
 </body>
